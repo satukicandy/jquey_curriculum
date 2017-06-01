@@ -15,7 +15,8 @@
   <div class="modal" style="display: none;">
     <div class="modal-content">
       <div class="modal-text">MODAL WINDOW</div>
-      <button type="button" class="modal-close">x</button>
+      <button type="button" class="modal-close">×</button>
+      <!-- x を×に書き換えました -->
     </div>
   </div>
 </div>
@@ -27,6 +28,14 @@
 // .click() クリック時のイベントを登録する。
 // .fadeIn() 一定時間かけてフェードインする。
 // .fadeOut() 一定時間かけてフェードアウトする。
+$(function() {
+    $(document).on('click','.modal-show',function() {
+        $('.modal').fadeIn();
+    });
+    $(document).on('click','.modal-close',function() {
+        $('.modal').fadeOut();
+    });
+});
 </script>
 </body>
 </html>

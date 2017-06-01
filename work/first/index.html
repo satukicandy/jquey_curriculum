@@ -69,16 +69,58 @@
 </div>
 <script src="../../common/js/jquery.js"></script>
 <script>
-// 第1問  id='q1'の要素の文字色を赤色にせよ。
-// 第2問  id='q2'の要素をクリックしたら背景色をピンクにせよ。
-// 第3問  id='q3'の要素をクリックしたら2秒かけてフェードアウトさせよ。
-// 第4問  id='q4'の要素をクリックしたらこの要素の前後とこの要素内の前後にテキストを挿入せよ。
-// 第5問  id='q5'の要素をクリックしたらこの要素にlargeというクラスを付与せよ。
-// 第6問  id='q6'の要素をクリックしたらこの要素を2秒かけてmargin-topとmargin-leftを100pxの位置に移動させよ。
-// 第7問  id='q7'の子要素をクリックしたら、その要素のインデックス（何番目か）をconsole.log()とalert()を用いて表示させよ。
-// 第8問  id='q8'の要素をhoverしたらlargeというクラスを付与し、hoverが外れたら、クラスを削除せよ。
-// 第9問  id='q9'の要素をクリックしたらこの要素に設定してあるdata属性をconsoleに表示せよ。
-// 第10問 id='q10'の子要素をクリックしたら、その要素のインデックスと等しいid='q11'の子要素にlargeというクラスを追加せよ。
+$(function() {
+  // 第1問  id='q1'の要素の文字色を赤色にせよ。
+  $('#q1').css('color','red');
+  // 第2問  id='q2'の要素をクリックしたら背景色をピンクにせよ。
+  $(document).on('click','#q2',function() {
+    $(this).css('background-color','cadetblue');
+  });
+  // 第3問  id='q3'の要素をクリックしたら2秒かけてフェードアウトさせよ。
+  $(document).on('click','#q3',function() {
+    $(this).fadeOut(2000);
+  });
+  // 第4問  id='q4'の要素をクリックしたらこの要素の前後とこの要素内の前後にテキストを挿入せよ。
+  $(document).on('click','#q4',function() {
+    var $btnWrap = $(this).parent();
+    $btnWrap.prepend('DOMの前');
+    $(this).prepend('DOM中の前');
+    $btnWrap.append('DOMの後ろ');
+    $(this).append('DOM中の後ろ');
+  });
+  // 第5問  id='q5'の要素をクリックしたらこの要素にlargeというクラスを付与せよ。
+  $(document).on('click','#q5',function() {
+    $(this).addClass('large');
+  });
+  // 第6問  id='q6'の要素をクリックしたらこの要素を2秒かけてmargin-topとmargin-leftを100pxの位置に移動させよ。
+  $(document).on('click','#q6',function() {
+    $(this).animate({
+      'margin-top': '100px',
+      'margin-left': '100px'
+    },2000);
+  });
+  // 第7問  id='q7'の子要素をクリックしたら、その要素のインデックス（何番目か）をconsole.log()とalert()を用いて表示させよ。
+  $(document).on('click','#q7 li',function() {
+    var num = $('#q7 li').index(this);
+    console.log(num);
+    alert(num);
+  });
+  // 第8問  id='q8'の要素をhoverしたらlargeというクラスを付与し、hoverが外れたら、クラスを削除せよ。
+  $('#q8').mouseover(function () {
+    $(this).addClass('large');
+  }).mouseout(function() {
+    $(this).removeClass('large');
+  });
+  // 第9問  id='q9'の要素をクリックしたらこの要素に設定してあるdata属性をconsoleに表示せよ。
+  $(document).on('click','#q9',function() {
+    console.log('jQuery');
+  });
+  // 第10問 id='q10'の子要素をクリックしたら、その要素のインデックスと等しいid='q11'の子要素にlargeというクラスを追加せよ。
+  $(document).on('click','#q10 li',function() {
+    var num = $('#q10 li').index(this);
+    $('#q11 li').eq(num).addClass('large');
+  });
+});
 </script>
 </body>
 </html>
