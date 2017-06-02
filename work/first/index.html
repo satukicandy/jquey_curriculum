@@ -1,126 +1,92 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="format-detection" content="telephone=no">
-<title>jQuery</title>
-<link rel="stylesheet" href="../../common/css/reset.css">
-<link rel="stylesheet" href="../../common/css/base.css">
-<link rel="stylesheet" href="./css/style.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1 ,user-scalable=no">
+  <title>jQuery</title>
+  <link rel="stylesheet" href="css/normalize.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/jquery.js"></script>
 </head>
 <body>
-<div class="wrapper">
-  <h1 class="title">jQuery</h1>
-  <h2 class="sub-title">Q1</h2>
-  <div class="question">
-    <div class="btn" id="q1">Q1</div>
-  </div>
-  <h2 class="sub-title">Q2</h2>
-  <div class="question">
-    <div class="btn" id="q2">Q2</div>
-  </div>
-  <h2 class="sub-title">Q3</h2>
-  <div class="question">
-    <div class="btn" id="q3">Q3</div>
-  </div>
-  <h2 class="sub-title">Q4</h2>
-  <div class="question">
-    <div class="btn" id="q4">Q4</div>
-  </div>
-  <h2 class="sub-title">Q5</h2>
-  <div class="question">
-    <div class="btn" id="q5">Q5</div>
-  </div>
-  <h2 class="sub-title">Q6</h2>
-  <div class="question">
-    <div class="btn" id="q6">Q6</div>
-  </div>
-  <h2 class="sub-title">Q7</h2>
-  <div class="question">
-    <ul class="list" id="q7">
-      <li>Q7-1</li>
-      <li>Q7-2</li>
-      <li>Q7-3</li>
-      <li>Q7-4</li>
-    </ul>
-  </div>
-  <h2 class="sub-title">Q8</h2>
-  <div class="question">
-    <div class="btn" id="q8">Q8</div>
-  </div>
-  <h2 class="sub-title">Q9</h2>
-  <div class="question">
-    <div class="btn" id="q9" data-text="jQuery">Q9</div>
-  </div>
-  <h2 class="sub-title">Q10</h2>
-  <div class="question">
-    <ul class="list" id="q10">
-      <li>Q10-1</li>
-      <li>Q10-2</li>
-      <li>Q10-3</li>
-    </ul>
-    <ul class="list" id="q11">
-      <li>Q11-1</li>
-      <li>Q11-2</li>
-      <li>Q11-3</li>
-    </ul>
-  </div>
-</div>
-<script src="../../common/js/jquery.js"></script>
-<script>
-$(function() {
-  // 第1問  id='q1'の要素の文字色を赤色にせよ。
-  $('#q1').css('color','red');
-  // 第2問  id='q2'の要素をクリックしたら背景色をピンクにせよ。
-  $(document).on('click','#q2',function() {
-    $(this).css('background-color','cadetblue');
-  });
-  // 第3問  id='q3'の要素をクリックしたら2秒かけてフェードアウトさせよ。
-  $(document).on('click','#q3',function() {
-    $(this).fadeOut(2000);
-  });
-  // 第4問  id='q4'の要素をクリックしたらこの要素の前後とこの要素内の前後にテキストを挿入せよ。
-  $(document).on('click','#q4',function() {
-    var $btnWrap = $(this).parent();
-    $btnWrap.prepend('DOMの前');
-    $(this).prepend('DOM中の前');
-    $btnWrap.append('DOMの後ろ');
-    $(this).append('DOM中の後ろ');
-  });
-  // 第5問  id='q5'の要素をクリックしたらこの要素にlargeというクラスを付与せよ。
-  $(document).on('click','#q5',function() {
-    $(this).addClass('large');
-  });
-  // 第6問  id='q6'の要素をクリックしたらこの要素を2秒かけてmargin-topとmargin-leftを100pxの位置に移動させよ。
-  $(document).on('click','#q6',function() {
-    $(this).animate({
-      'margin-top': '100px',
-      'margin-left': '100px'
-    },2000);
-  });
-  // 第7問  id='q7'の子要素をクリックしたら、その要素のインデックス（何番目か）をconsole.log()とalert()を用いて表示させよ。
-  $(document).on('click','#q7 li',function() {
-    var num = $('#q7 li').index(this);
-    console.log(num);
-    alert(num);
-  });
-  // 第8問  id='q8'の要素をhoverしたらlargeというクラスを付与し、hoverが外れたら、クラスを削除せよ。
-  $('#q8').mouseover(function () {
-    $(this).addClass('large');
-  }).mouseout(function() {
-    $(this).removeClass('large');
-  });
-  // 第9問  id='q9'の要素をクリックしたらこの要素に設定してあるdata属性をconsoleに表示せよ。
-  $(document).on('click','#q9',function() {
-    console.log('jQuery');
-  });
-  // 第10問 id='q10'の子要素をクリックしたら、その要素のインデックスと等しいid='q11'の子要素にlargeというクラスを追加せよ。
-  $(document).on('click','#q10 li',function() {
-    var num = $('#q10 li').index(this);
-    $('#q11 li').eq(num).addClass('large');
-  });
-});
-</script>
+	<div class="wrapper">
+		<h1>jQuery</h1>
+		<section>
+			<h2>Q1</h2>
+			<div class="question">
+				<div id="q1" class="btn">Q1</div>
+			</div>
+		</section>
+		<section>
+			<h2>Q2</h2>
+			<div class="question">
+				<div id="q2" class="btn">Q2</div>
+			</div>
+		</section>
+		<section>
+			<h2>Q3</h2>
+			<div class="question">
+				<div id="q3" class="btn">Q3</div>
+			</div>
+		</section>
+		<section>
+			<h2>Q4</h2>
+			<div class="question">
+				<div id="q4" class="btn">Q4</div>
+			</div>
+		</section>
+		<section>
+			<h2>Q5</h2>
+			<div class="question">
+				<div id="q5" class="btn">Q5</div>
+			</div>
+		</section>
+		<section>
+			<h2>Q6</h2>
+			<div class="question">
+				<div id="q6" class="btn">Q6</div>
+			</div>
+		</section>
+		<section>
+			<h2>Q7</h2>
+			<div class="question">
+				<ul id="q7" class="list">
+					<li>Q7-1</li>
+					<li>Q7-2</li>
+					<li>Q7-3</li>
+					<li>Q7-4</li>
+				</ul>
+			</div>
+		</section>
+		<section>
+			<h2>Q8</h2>
+			<div class="question">
+				<div id="q8" class="btn">Q8</div>
+			</div>
+		</section>
+		<section>
+			<h2>Q9</h2>
+			<div class="question">
+				<div id="q9" class="btn">Q9</div>
+			</div>
+		</section>
+		<section>
+			<h2>Q10</h2>
+			<div class="question">
+				<ul id="q10" class="list">
+					<li>Q10-1</li>
+					<li>Q10-2</li>
+					<li>Q10-3</li>
+				</ul>
+				<ul id="q11" class="list">
+					<li>Q11-1</li>
+					<li>Q11-2</li>
+					<li>Q11-3</li>
+				</ul>
+			</div>
+		</section>
+	</div>
 </body>
 </html>

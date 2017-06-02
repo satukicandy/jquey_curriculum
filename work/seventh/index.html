@@ -1,39 +1,29 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="format-detection" content="telephone=no">
-<title>jQuery</title>
-<link rel="stylesheet" href="../../common/css/reset.css">
-<link rel="stylesheet" href="../../common/css/base.css">
-<link rel="stylesheet" href="./css/style.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1 ,user-scalable=no">
+  <title>jQuery</title>
+  <link rel="stylesheet" href="css/normalize.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/jquery.js"></script>
 </head>
 <body>
-<div class="wrapper">
-  <div class="slider-wrap">
-    <div class="slider-area">
-      <ul class="slider-list clearfix">
-        <li><img src="./img/1.jpg"></li>
-        <li><img src="./img/2.jpg"></li>
-        <li><img src="./img/3.jpg"></li>
-        <li><img src="./img/4.jpg"></li>
+	<div class="wrapper">
+  <div class="slider_wrap">
+    <div class="slider_area">
+      <ul id="imageslist" class="clearfix">
+        <li><img src="images/1.jpg"></li>
+        <li><img src="images/2.jpg"></li>
+        <li><img src="images/3.jpg"></li>
+        <li><img src="images/4.jpg"></li>
       </ul>
-      <button type="button" class="slider-ctrl-btn is-prev" data-ctrl="prev"></button>
-      <button type="button" class="slider-ctrl-btn is-next" data-ctrl="next"></button>
+      <button id="slidebtn" class="slidebtn is_prev" type="button"></button>
+      <button id="slidebtn" class="slidebtn is_next" type="button"></button>
     </div>
   </div>
-</div>
-<script src="../../common/js/jquery.js"></script>
-<script>
-// 今回やるのはスライドショーです。
-// 右方向には右のボタンを押すと移動し、左方向には左のボタンを押すと移動する。また右端にいる状態で右のボタンを押すと最初の位置に戻り、 左端にいる状態で左のボタンを押すと最後の位置に移動する。data属性にprev,nextを記述してあるのでこちらを取得すると楽です。
-// 位置情報は配列に格納しておき、右のボタンをクリックするたびに配列の添字を1追加し、左のボタンをクリックすると配列の添字を1減らします。そうすることによって次の座標が取得できます。その座標にアニメーションさせるととても楽です。
-// [使用するメソッド]
-// .animate({}) cssのプロパティを一定時間かけて変化させます。アニメーションです。
-// .data() 要素のdata属性を取得します。
-// .width() 要素の幅を取得します。
-// .length 要素の個数を取得します。
-</script>
+	</div>
 </body>
 </html>

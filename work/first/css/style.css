@@ -1,56 +1,138 @@
+@charset "UTF-8";
+html {
+  font-family: YuGothic, '游ゴシック', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.3em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+dd,
+dt,
+ul,
+img {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  appearance: none;
+}
+
 .clearfix:after {
+  content: "";
   display: block;
   clear: both;
-  content: '';
+}
+
+@media screen and (max-width: 480px) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 .wrapper {
+  width: 100%;
+  height: 100%;
   padding: 20px;
 }
-.title {
+.wrapper h1 {
+  margin-bottom: 40px;
   font-size: 50px;
+  font-weight: normal;
+  line-height: 1.3em;
 }
-.sub-title {
-  margin: 40px 0 20px;
+.wrapper section {
+  width: 100%;
+  margin-bottom: 40px;
+}
+.wrapper section h2 {
+  margin-bottom: 20px;
   font-size: 30px;
+  line-height: 1.3em;
+  font-weight: normal;
 }
-.question {
+.wrapper section .question {
   padding: 40px 20px;
   text-align: center;
   background-color: #fff;
 }
-.btn {
+.wrapper section .question .btn {
   display: inline-block;
-  padding: 10px;
   width: 300px;
-  text-align: center;
-  color: #fff;
+  padding: 10px;
   border-radius: 10px;
   background-color: maroon;
-  box-sizing: border-box;
+  color: #fff;
+  line-height: 1.3em;
   cursor: pointer;
 }
-.btn + .btn {
-  margin-top: 20px;
+.wrapper section .question .btn.large {
+  font-size: 30px;
 }
-.list {
+@media screen and (max-width: 480px) {
+  .wrapper section .question .btn {
+    width: 80%;
+  }
+}
+.wrapper section .question .list {
   margin: 0 auto;
   width: 300px;
 }
-.list + .list {
-  margin-top: 40px;
+.wrapper section .question .list:nth-child(n+1) {
+  margin-top: 20px;
 }
-.list > li {
+@media screen and (max-width: 480px) {
+  .wrapper section .question .list {
+    width: 80%;
+  }
+}
+.wrapper section .question .list li {
+  width: 100%;
   padding: 10px;
-  color: #fff;
-  text-align: center;
-  border-top: 1px #fff solid;
+  border-top: 1px solid #fff;
   background-color: maroon;
-  box-sizing: border-box;
+  color: #fff;
+  line-height: 1.3em;
   cursor: pointer;
 }
-.list > li:first-child {
+.wrapper section .question .list li.large {
+  font-size: 30px;
+}
+.wrapper section .question .list li:first-child {
   border-top: none;
 }
-.large {
-  font-size:30px;
-}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,43 +1,118 @@
+@charset "UTF-8";
+html {
+  font-family: YuGothic, '游ゴシック', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.3em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+dd,
+dt,
+ul,
+img {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  appearance: none;
+}
+
 .clearfix:after {
+  content: "";
   display: block;
   clear: both;
-  content: '';
+}
+
+@media screen and (max-width: 480px) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 .wrapper {
+  width: 100%;
+  height: 100%;
   padding: 20px;
 }
-.slider-wrap {
+.wrapper .slider_wrap {
+  width: 620px;
   padding: 10px;
   margin: 0 auto;
-  width: 620px;
-  border-radius: 0px;
   background-color: #fff;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, .4);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
 }
-.slider-area {
+.wrapper .slider_wrap .slider_area {
   position: relative;
-  width: 600px;
+  width: 100%;
   height: 300px;
-  background-color: #FFF;
   overflow: hidden;
 }
-.slider-list {
+.wrapper .slider_wrap .slider_area ul {
   position: absolute;
   top: 0;
   left: 0;
   width: 2400px;
   height: 300px;
 }
-.slider-list > li { float: left; }
-.slider-ctrl-btn {
+.wrapper .slider_wrap .slider_area ul li {
+  width: 600px;
+  height: 300px;
+  float: left;
+}
+.wrapper .slider_wrap .slider_area .slidebtn {
   position: absolute;
   top: 50%;
-  margin-top: -15px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
   width: 30px;
   height: 30px;
-  border-radius: 15px;
-  background-color: rgba(255, 255, 255, .8);
-  cursor: pointer;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-transition: .25s;
+  transition: .25s;
 }
-.slider-ctrl-btn.is-prev { left: 20px; }
-.slider-ctrl-btn.is-next { right: 20px; }
+.wrapper .slider_wrap .slider_area .slidebtn:hover {
+  background-color: white;
+}
+.wrapper .slider_wrap .slider_area .slidebtn.is_prev {
+  left: 20px;
+}
+.wrapper .slider_wrap .slider_area .slidebtn.is_next {
+  right: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */

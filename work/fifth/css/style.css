@@ -1,69 +1,155 @@
+@charset "UTF-8";
+html {
+  font-family: YuGothic, '游ゴシック', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.3em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+dd,
+dt,
+ul,
+img {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  appearance: none;
+}
+
 .clearfix:after {
+  content: "";
   display: block;
   clear: both;
-  content: '';
+}
+
+@media screen and (max-width: 480px) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 .wrapper {
+  width: 100%;
+  height: 100%;
   padding: 20px;
 }
-.contents {
-  margin: 0 auto;
+.wrapper .contents {
   width: 300px;
+  margin: auto;
 }
-.title {
+.wrapper .contents h1 {
   padding: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
   font-size: 24px;
+  line-height: 1.3em;
   font-weight: bold;
   text-align: center;
-  background-color: #fff;
 }
-.select-wrapper {
-  margin: 10px 0;
+.wrapper .contents .select-box {
+  margin-bottom: 10px;
   text-align: right;
 }
-.select {
-  padding: 10px;
+.wrapper .contents .select-box select {
   width: 100px;
-  font-size: 14px;
-  color: #fff;
+  padding: 10px;
   border: none;
-  border-radius: 0;
   background-color: darkcyan;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, .4);
+  color: #fff;
+  font-size: 14px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   cursor: pointer;
   -webkit-appearance: none;
 }
-.list > li {
-  border-top: 1px #eee solid;
-}
-.article {
-  position: relative;
-  display: table;
-  padding: 10px;
+.wrapper .contents .list {
   width: 100%;
-  background-color: #fff;
-  table-layout: fixed;
 }
-.article-icon {
-  display: table-cell;
+.wrapper .contents .list li {
+  border-top: 1px solid #eee;
+}
+.wrapper .contents .list li .article {
+  display: -webkit-flex;
+  display: flex;
+  align-items: -webkit-center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  background-color: #fff;
+  text-decoration: none;
+}
+.wrapper .contents .list li .article .article-icon {
   width: 50px;
   height: 50px;
   background-size: cover;
 }
-.article-icon.is-bootstrap { background-image: url(../img/bootstrap.png); }
-.article-icon.is-material-ui { background-image: url(../img/material-ui.png); }
-.article-icon.is-react { background-image: url(../img/react.png); }
-.article-icon.is-aurelia { background-image: url(../img/aurelia.png); }
-.article-icon.is-ruby-on-rails { background-image: url(../img/ruby-on-rails.png); }
-.article-icon.is-laravel { background-image: url(../img/laravel.png); }
-.article-icon.is-phalcon { background-image: url(../img/phalcon.png); }
-.article-icon.is-django { background-image: url(../img/django.png); }
-.article-icon.is-play { background-image: url(../img/play.png); }
-.article-name {
-  display: table-cell;
-  padding-left: 20px;
-  width: 100%;
+.wrapper .contents .list li .article .article-icon.is_bootstrap {
+  background-image: url("../images/bootstrap.png");
+}
+.wrapper .contents .list li .article .article-icon.is_ruby-on-rails {
+  background-image: url("../images/ruby-on-rails.png");
+}
+.wrapper .contents .list li .article .article-icon.is_phalcon {
+  background-image: url("../images/phalcon.png");
+}
+.wrapper .contents .list li .article .article-icon.is_react {
+  background-image: url("../images/react.png");
+}
+.wrapper .contents .list li .article .article-icon.is_play {
+  background-image: url("../images/play.png");
+}
+.wrapper .contents .list li .article .article-icon.is_aurelia {
+  background-image: url("../images/aurelia.png");
+}
+.wrapper .contents .list li .article .article-icon.is_django {
+  background-image: url("../images/django.png");
+}
+.wrapper .contents .list li .article .article-icon.is_material-ui {
+  background-image: url("../images/material-ui.png");
+}
+.wrapper .contents .list li .article .article-icon.is_laraver {
+  background-image: url("../images/laravel.png");
+}
+.wrapper .contents .list li .article .article-name {
+  width: calc(100% - 70px);
+  margin-left: 20px;
+  color: #333;
   font-size: 16px;
   font-weight: bold;
-  vertical-align: middle;
 }
+
+/*# sourceMappingURL=style.css.map */
